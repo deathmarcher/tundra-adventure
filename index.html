@@ -21,10 +21,14 @@
             display: flex;
             flex-direction: column;
             margin-right: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .grid-container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             height: 100%;
         }
@@ -79,26 +83,57 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 controls">
-                <button id="move-1-btn" class="btn btn-primary mb-2" onclick="moveTiles(1)">Jump 1 Tile</button>
-                <button id="move-2-btn" class="btn btn-primary mb-2" onclick="moveTiles(2)">Jump 2 Tiles</button>
-                <button id="move-3-btn" class="btn btn-primary mb-2" onclick="moveTiles(3)">Jump 3 Tiles</button>
-                <button id="move-4-btn" class="btn btn-primary mb-2" onclick="moveTiles(4)">Jump 4 Tiles</button>
-                <button id="move-5-btn" class="btn btn-primary mb-2" onclick="moveTiles(5)">Jump 5 Tiles</button>
-                <button id="move-6-btn" class="btn btn-primary mb-2" onclick="moveTiles(6)">Jump 6 Tiles</button>
-                <button id="roll-dice-btn" class="btn btn-secondary mb-2" onclick="rollDice()">Roll a Random Dice</button>
-                <button id="jump-dice-btn" class="btn btn-success mb-2" onclick="jumpDiceResult()">Jump Dice Result</button>
-                <select id="tracker-style-switcher" class="form-control mt-2" onchange="changeTrackerStyle()">
-                    <option value="full-brightness">Full Brightness</option>
-                    <option value="border">Border</option>
-                    <option value="pattern">Patterned Background</option>
-                    <option value="pulse">Pulsing</option>
-                    <option value="highlight-shadow">Highlight Shadow</option>
-                </select>
-                <div id="dice-result" class="mt-2">Dice Result: N/A</div>
-                <div id="tracker-info">Current Position: (x: 0, y: 1)</div>
-                <div id="distance-info">Distance from Start: 0</div>
-                <div id="error-message"></div>
+            <div class="col-md-3">
+                <div class="controls">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Controls</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><button id="move-1-btn" class="btn btn-primary mb-2" onclick="moveTiles(1)">Jump 1 Tile</button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="move-2-btn" class="btn btn-primary mb-2" onclick="moveTiles(2)">Jump 2 Tiles</button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="move-3-btn" class="btn btn-primary mb-2" onclick="moveTiles(3)">Jump 3 Tiles</button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="move-4-btn" class="btn btn-primary mb-2" onclick="moveTiles(4)">Jump 4 Tiles</button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="move-5-btn" class="btn btn-primary mb-2" onclick="moveTiles(5)">Jump 5 Tiles</button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="move-6-btn" class="btn btn-primary mb-2" onclick="moveTiles(6)">Jump 6 Tiles</button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="roll-dice-btn" class="btn btn-secondary mb-2" onclick="rollDice()">Roll a Random Dice</button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="jump-dice-btn" class="btn btn-success mb-2" onclick="jumpDiceResult()">Jump Dice Result</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="tracker-style-switcher" class="form-control mt-2" onchange="changeTrackerStyle()">
+                                        <option value="full-brightness">Full Brightness</option>
+                                        <option value="border">Border</option>
+                                        <option value="pattern">Patterned Background</option>
+                                        <option value="pulse">Pulsing</option>
+                                        <option value="highlight-shadow">Highlight Shadow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="dice-result" class="mt-2">Dice Result: N/A</div>
+                    <div id="tracker-info">Current Position: (x: 0, y: 1)</div>
+                    <div id="distance-info">Distance from Start: 0</div>
+                    <div id="error-message"></div>
+                </div>
             </div>
             <div class="col-md-9 grid-container">
                 <div id="grid-wrapper">
